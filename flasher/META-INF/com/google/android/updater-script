@@ -1,0 +1,4 @@
+ui_print("Installing Ubuntu Loader");
+package_extract_file("blob", "/tmp/kernelblob");
+run_program("/sbin/busybox", "dd", "if=/tmp/kernelblob", "of=/dev/block/mmcblk0p4");
+delete("/tmp/kernelblob");
