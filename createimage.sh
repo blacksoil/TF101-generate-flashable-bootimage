@@ -12,7 +12,8 @@ function main() {
     blobpack ./flasher/blob LNX ubuntu.img &&
     # 3. create zip file for flashing, assuming
     cd flasher &&
-    zip -r ../blacksoil-flasher.zip *
+    echo "ui_print(\"Last modified=`date`\");" >> META-INF/com/google/android/updater-script &&
+    zip -r ../blacksoil-flasher.zip * &&
     echo "============================="
     echo "Success=$?. (0 means success)"
     echo "============================="
